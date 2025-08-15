@@ -4,13 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://tejaskhandwekar.github.io",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
