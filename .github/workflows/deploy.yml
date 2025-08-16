@@ -1,3 +1,5 @@
+# This workflow builds and deploys a project to GitHub Pages.
+
 name: Build and Deploy to GitHub Pages
 
 on:
@@ -6,37 +8,51 @@ on:
 
 jobs:
   build-and-deploy:
+    # Use the latest version of Ubuntu as the runner
     runs-on: ubuntu-latest
     
+    # Define the permissions required for the job
     permissions:
       contents: read
       pages: write
       id-token: write
     
     steps:
+    # Step 1: Check out the repository's code
     - name: Checkout
       uses: actions/checkout@v4
       
+    # Step 2: Set up Node.js environment
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
         cache: 'npm'
         
+    # Step 3: Install project dependencies using npm ci for a clean install
     - name: Install dependencies
       run: npm ci --legacy-peer-deps
       
+    # Step 4: Run the build script defined in package.json
     - name: Build
       run: npm run build
       
+    # Step 5: Configure GitHub Pages settings
+    # UPDATED to the latest version v5
     - name: Setup Pages
-      uses: actions/configure-pages@v3
+      uses: actions/configure-pages@v5
       
+    # Step 6: Upload the build artifact for GitHub Pages
+    # UPDATED to the latest compatible version v3
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v4 # <-- UPDATED TO V4
+      uses: actions/upload-pages-artifact@v3 
       with:
+        # Upload the 'dist' directory which contains the build output
         path: './dist'
         
+    # Step 7: Deploy the artifact to GitHub Pages
+    # UPDATED to the latest version v4
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v4 # <-- UPDATED TO V4
+      uses: actions/deploy-pages@v4
+
