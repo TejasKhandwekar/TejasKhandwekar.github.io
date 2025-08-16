@@ -19,9 +19,14 @@ jobs:
       with:
         node-version: '18' # Or '20' if you prefer a newer LTS
         cache: 'npm'
+        cache-dependency-path: 'package-lock.json' # Use 'package-lock.json' if you have one, otherwise remove this line
         
     - name: Install dependencies
-      run: npm install --legacy-peer-deps # Keep this for compatibility
+      # Use npm ci for clean install in CI environments
+      run: npm ci --legacy-peer-deps
+      
+    - name: Add npm bin to PATH
+      run: echo "$HOME/.npm-global/bin" >> $GITHUB_PATH
       
     - name: Build
       run: npm run build
