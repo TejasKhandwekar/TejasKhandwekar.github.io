@@ -17,11 +17,11 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '18' # Or '20' if you prefer a newer LTS
         cache: 'npm'
         
     - name: Install dependencies
-      run: npm install --legacy-peer-deps
+      run: npm install --legacy-peer-deps # Keep this for compatibility
       
     - name: Build
       run: npm run build
