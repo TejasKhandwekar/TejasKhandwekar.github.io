@@ -102,9 +102,9 @@ function App() {
       location: "Nagpur, India",
       period: "October 2021 - July 2022",
       achievements: [
-        "Coordinated company visits, interviews, and communications for recruiting events across departments, managing logistics for over 50 companies and 1000+ students.",
+        "Coordinated company visits, interviews, and communications for recruiting events across departments, managing logistics for over 10 companies and 100+ students.",
         "Assisted in organizing promotional materials and ensuring smooth execution of technical interviews and events, enhancing candidate experience.",
-        "Worked closely with students and faculty to manage schedules and event logistics, improving operational efficiency by 20%."
+        "Worked closely with students and faculty to manage schedules and event logistics, improving operational efficiency."
       ]
     },
     {
@@ -113,7 +113,7 @@ function App() {
       location: "Bengaluru, Karnataka",
       period: "May 2021 - July 2021",
       achievements: [
-        "Created an information management tool using Power BI and SharePoint lists to organize deliverables and improve accessibility of information, storing and displaying data on a Project information portal written in TypeScript, reducing data retrieval time by 30%."
+        "Created an information management tool using Power BI and SharePoint lists to organize deliverables and improve accessibility of information, storing and displaying data on a Project information portal written in TypeScript."
       ]
     }
   ]
@@ -445,7 +445,7 @@ function App() {
                   <h4 className="font-semibold mb-2">Research Impact & Context</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
                     <li>• Submitted to the prestigious NeurIPS 2024 Workshop on Time Series in the Age of Large Models.</li>
-                    <li>• A collaborative effort with researchers from Lancaster University and ExxonMobil.</li>
+                    <li>• A collaboration with researchers from Iqast.</li>
                     <li>• Addresses critical questions regarding the real-world efficacy of emerging AI models in time series forecasting.</li>
                     <li>• Provides industry-relevant insights, particularly for supply chain and demand planning, where monthly data is prevalent.</li>
                     <li>• Reinforces the need for critical assessment of advanced techniques against established methods using robust evaluation frameworks.</li>
