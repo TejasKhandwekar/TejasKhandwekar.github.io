@@ -37,6 +37,9 @@ import perceptronTrend1 from './assets/perceptron-trend-1.png'
 import perceptronTrend2 from './assets/perceptron-trend-2.png'
 import porousMedia1 from './assets/porous-media-1.png'
 import ietsModelsTrends from './assets/iets-models-trends.png'
+import whyHere1 from './assets/why_here_1.png'
+import whyHere2 from './assets/why_here_2.png'
+import resume from './assets/ML Internship Resume.pdf'
 import './App.css'
 
 function App() {
@@ -44,7 +47,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'research', 'experience', 'projects', 'interests', 'blog', 'contact']
+      const sections = ['hero', 'experience', 'about', 'research', 'projects', 'interests', 'blog', 'contact']
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -81,101 +84,112 @@ function App() {
 
   const experiences = [
     {
+      title: "Graduate Research Assistant",
+      company: "Ford / Georgia Institute of Technology",
+      location: "Atlanta, GA",
+      period: "Aug 2025 - Present",
+      achievements: [
+        "Engineering unsupervised learning pipelines on 1 Hz vehicle telemetry to detect near miss collisions, compute Time to Collision metrics, and generate risk scores informing insurance pricing and safety analytics.",
+        "Applying signal processing techniques and Dynamic Time Warping to discover, cluster, and classify driving patterns, surfacing rare but critical anomalous behaviors across millions of datapoints.",
+        "Framing methodology analogous to anomaly detection in high-frequency trading streams, emphasizing rare high-impact events over average behavior."
+      ]
+    },
+    {
       title: "Data Scientist",
       company: "ExxonMobil",
-      location: "Bengaluru, Karnataka",
-      period: "July 2022 - June 2025",
+      location: "Bengaluru, India",
+      period: "Jul 2022 - Jun 2025",
       achievements: [
-        "Automated fee calculation from digitized contracts using AWS Textract and developed a contract-invoice reconciliation system to detect mismatches using AWS Bedrock by Attribute Extraction using RAG, improving accuracy and efficiency in contract management.",
-        "Integrated GenAI-based fee calculator with AWS Glue ETL workflows, identifying invoice discrepancies and delivering $2.9M in cost savings.",
-        "Co-developed a global demand-forecasting pipeline for thousands of SKUs, addressing data gaps and tailoring ensemble models to segmented clusters, incorporating demand planners' feedback and business processes, and reduced model run times by 50%.",
-        "Improved demand-forecasting accuracy by 10% over vendor solutions, enabling $50M in business impact through enhanced planning and procurement.",
-        "Developed a statistical forecasting model for price predictions, enabling better capacity planning and trading decisions, achieving direction accuracy of 78%.",
-        "Achieved $2M/year financial savings by collaborating with domain experts, incorporating leading drivers, and using a custom loss function to minimize direction loss for trading.",
-        "Built a Dockerized segmentation model, which automated clustering, reduced analysis and workload time from months to hours, and boosted tailored marketing efforts, driving significant sales growth.",
-        "Presented to large audiences and hosted engaging events like Data Science Day with quizzes and interactive activities."
-      ]
-    },
-    {
-      title: "General Recruitment Coordinator",
-      company: "VNIT, Nagpur",
-      location: "Nagpur, India",
-      period: "October 2021 - July 2022",
-      achievements: [
-        "Coordinated company visits, interviews, and communications for recruiting events across departments, managing logistics for over 10 companies and 100+ students.",
-        "Assisted in organizing promotional materials and ensuring smooth execution of technical interviews and events, enhancing candidate experience.",
-        "Worked closely with students and faculty to manage schedules and event logistics, improving operational efficiency."
-      ]
-    },
-    {
-      title: "Project Engineering Intern",
-      company: "ExxonMobil",
-      location: "Bengaluru, Karnataka",
-      period: "May 2021 - July 2021",
-      achievements: [
-        "Created an information management tool using Power BI and SharePoint lists to organize deliverables and improve accessibility of information, storing and displaying data on a Project information portal written in TypeScript."
+        "Built and co-owned a global demand forecasting pipeline for thousands of SKUs using ensemble time series models tailored to product/region clusters, validated via planner feedback and backtesting; ~10% accuracy improvement over vendor models, unlocking ~$50M working capital savings and better service levels.",
+        "Developed statistical and ML price forecasting models with a custom loss prioritizing directional correctness at a 3-month horizon; ~72% directional accuracy supporting trading and capacity planning, ~$2M/year financial benefit.",
+        "Designed and productionized RFM-based customer segmentation on 2M+ transactions; clustering created actionable segments that lifted upsell conversion ~5%, ~$1.3M incremental annual revenue, and reduced analysis time from months to hours via Dockerized automation.",
+        "Led GenAI-driven automation for contracts and invoicing: AWS Textract for field extraction; Bedrock-based RAG 'GenAI calculator' to compute/reconcile fees across 100+ contracts and thousands of invoices; integrated into Glue ETL to auto-flag discrepancies; identified ~$2.9M in overbilling and cut manual validation.",
+        "Built a contract analysis dashboard combining regex pattern matching with a BERT model to flag non-standard clauses and high-risk contracts, using risk scores to standardize language and reduce review time.",
+        "Implemented a Power BI + SharePoint information portal centralizing deliverables, dashboards, and documentation, improving discoverability and self-service for stakeholders."
       ]
     }
   ]
 
   const projects = [
     {
-      title: "Comparison of Time Series Foundational Models (Draft)",
-      organization: "Lancaster University & ExxonMobil",
-      period: "2024 - Present",
-      description: "Co-authored a research paper draft evaluating foundation models (Chronos, TimeGPT, Moirai) against established neural networks, machine learning, and statistical benchmarks. Conducted rigorous empirical evaluation using rolling time origins and robust error metrics. This work was submitted to the NeurIPS 2024 Workshop on Time Series in the Age of Large Models.",
-      tags: ["Research", "Time Series", "Foundation Models", "NeurIPS 2024"],
+      title: "Unsupervised Detection of Critical Near Miss Events in Urban and Highway Driving",
+      organization: "Ford / Georgia Tech",
+      period: "Aug 2025 - Present",
+      description: "Detect, characterize, and quantify near miss driving events from real-world 1 Hz vehicle telemetry to support insurance, safety analytics, and product design decisions. Built ingestion and windowing, anomaly detection and clustering, DTW-based sequence similarity, and Time to Collision risk scoring for interpretable pattern libraries.",
+      tags: ["Python", "Time Series", "DTW", "Anomaly Detection", "Unsupervised"],
       type: "research",
-      images: [figure2]
+      images: []
     },
     {
-      title: "iETS Models for Intermittent Demand Forecasting",
-      organization: "Lancaster University",
-      period: "June 2024 - Present",
-      description: "Collaborated with Prof. Ivan from Lancaster University to test innovation state space models (iETS) for forecasting intermittent demand. Applied R's smooth package to improve forecasts for irregular demand scenarios in retail sales data vs other models, demonstrating a 15% improvement in forecast accuracy.",
-      tags: ["R", "Time Series", "Forecasting", "Research", "Statistical Modeling"],
+      title: "iETS Models for Pharmaceutical / Retail Intermittent Demand Forecasting",
+      organization: "Independent",
+      period: "Jun 2024 - Jul 2025",
+      description: "Evaluate intermittent state space (iETS) models for long-horizon sparse demand forecasting using R's smooth package; designed an experimental protocol and benchmarked against baselines, showing ~15% improvement for irregular retail sales.",
+      tags: ["R", "Intermittent Demand", "Forecasting", "Time Series", "Evaluation"],
       type: "academic",
       images: [ietsModelsTrends]
     },
     {
-      title: "Natural Language Processing for Question Answering",
-      organization: "Visvesvaraya National Institute of Technology",
-      period: "May 2021 - January 2022",
-      description: "Enhanced state-of-the-art NLP models for multi-hop question answering across multiple documents. Built knowledge graphs and applied unsupervised methods for reasoning sentence selection; co-trained LSTM and fine-tuned BERT for improved QA performance, achieving a 10% increase in F1 score.",
-      tags: ["NLP", "BERT", "LSTM", "Knowledge Graphs", "Deep Learning"],
-      type: "academic",
-      images: [] 
+      title: "Comparison of Time Series Foundational Models for Forecasting",
+      organization: "Independent / Academic",
+      period: "Jun 2024 - Jul 2025",
+      description: "Systematically compare foundation models (Chronos, TimeGPT, Moirai) against strong statistical and ML baselines in a multi-origin framework; found tuned statistical models outperform foundation models by ~36% in RMSSE.",
+      tags: ["Python", "Foundation Models", "Forecasting", "Benchmarking", "RMSSE"],
+      type: "research",
+      images: [figure2]
     },
     {
-      title: "Automated Vibration Comfort Classification",
-      organization: "Visvesvaraya National Institute of Technology",
-      period: "Academic Project",
-      description: "Engineered a comprehensive vehicle vibration dataset using control theory in MATLAB, subsequently implementing 1D CNNs to accurately categorize time-series vibrations into comfort scores. Built a custom version 1D ResNet (CNN) to classify time series data after analyzing different methodologies and models, achieving 95% classification accuracy.",
-      tags: ["CNN", "MATLAB", "Time Series", "Classification", "Computer Vision"],
+      title: "Automated Vibration Classification for Vehicles using Deep CNNs",
+      organization: "VNIT Nagpur",
+      period: "Jan 2022 - Jul 2022",
+      description: "Predict ride comfort from vibration signals with a 1D ResNet-style CNN trained on ~22k MATLAB-generated vibration samples following ISO standards; achieved ~95% test accuracy.",
+      tags: ["MATLAB", "Signal Processing", "1D CNN", "ResNet", "Time Series"],
       type: "academic",
-      images: [] 
+      images: []
     },
     {
-      title: "Porous Media Solver using CNN",
-      organization: "Visvesvaraya National Institute of Technology",
-      period: "Academic Project",
-      description: "Developed a novel CNN model for simulating fluid flows in porous media, achieving a simulation speed approximately 2000 times faster than conventional CFD methods while maintaining legible results. Pioneered the creation of a comprehensive dataset for this AI-driven approach, reducing computational time from hours to seconds.",
-      tags: ["CNN", "CFD", "Simulation", "Deep Learning", "Scientific Computing"],
+      title: "WhyHere - Explainable Top N Location Recommender for Atlanta",
+      organization: "Georgia Tech (CSE 6242)",
+      period: "2025",
+      description: "Transparent, user-controllable recommender: users rank 8 features converted to Borda weights; Databricks distance-decay scoring over H3 hex grid (~2,143 units); Flask backend computes suitability and explanations; visualization evaluated (DBSCAN vs thresholds) choosing interpretable thresholding; mock frontend with map and CSV export.",
+      tags: ["Databricks", "Spark", "Geospatial", "H3", "Flask", "Explainable AI"],
       type: "academic",
-      images: [porousMedia1]
+      images: [whyHere1, whyHere2]
     },
     {
-      title: "Perceptrons - Trend Prediction",
-      organization: "Myntra & Dare2Compete Hackathon",
-      period: "Academic Project",
-      description: "2nd Place – National Hackathon by Myntra & Dare2Compete. Real-time fashion trend detection system using Instagram scraping, semantic segmentation (Mask R-CNN), and attribute classification to track emerging styles from social media.",
-      tags: ["Computer Vision", "Mask R-CNN", "Image Processing", "Deep Learning"],
+      title: "Myntra Hacker Ramp - Fashion Trend Detection using CNNs (Runner up)",
+      organization: "Myntra Hacker Ramp",
+      period: "BTech",
+      description: "Built a CNN-based computer vision pipeline on Instagram fashion images to detect styles and trends; delivered signals for merchandising decisions; runner up in hackathon.",
+      tags: ["Computer Vision", "CNN", "Image Classification", "Prototyping"],
       type: "academic",
       images: [perceptronTrend1, perceptronTrend2]
+    },
+    {
+      title: "GenAI Contract and Invoice Reconciliation System",
+      organization: "ExxonMobil",
+      period: "2023 - 2025",
+      description: "AWS Textract digitization of 100+ contracts and thousands of invoices; Bedrock-based RAG 'GenAI calculator' applies complex fee/discount rules to compute expected charges; integrated into Glue ETL to auto-check every invoice and flag discrepancies; identified ~$2.9M savings and reduced manual checks.",
+      tags: ["AWS Textract", "Bedrock", "RAG", "ETL", "Glue", "Automation"],
+      type: "industry",
+      images: []
+    },
+    {
+      title: "Customer Segmentation and Targeting Pipeline",
+      organization: "ExxonMobil",
+      period: "2022 - 2024",
+      description: "Engineered RFM and behavioral features over 2M+ transactions; clustering yielded interpretable segments; partnered with marketing for strategies; validated via A/B and hypothesis testing; Dockerized pipeline for automated refresh and scoring.",
+      tags: ["Feature Engineering", "Clustering", "RFM", "A/B Testing", "Docker"],
+      type: "industry",
+      images: []
     }
   ]
 
   const interests = [
+    { icon: TrendingUp, title: "Supply Chain Data Science", description: "Forecasting, inventory optimization, demand planning and pricing analytics across complex supply chains." },
+    { icon: Brain, title: "Autonomous Driving Analytics", description: "Telemetry analysis, anomaly detection, DTW similarity, risk scoring for safety and insurance." },
+    { icon: Code, title: "Time Series Data Science", description: "Classical + ML forecasting, intermittent demand, multi-origin evaluation, interpretable modeling." },
+    { icon: Award, title: "Financial Data Science", description: "Market signals, price direction modeling, anomaly detection in financial time series." },
     { icon: Telescope, title: "Astronomy & Stargazing", description: "Passionate about exploring the cosmos and celestial phenomena, regularly attending stargazing events and following astronomical discoveries." },
     { icon: Brain, title: "Emerging Tech & AI Trends", description: "Actively researching and staying current with the latest developments in AI, machine learning, and other disruptive technologies, attending webinars and conferences." },
     { icon: Users, title: "Event Planning", description: "Experienced in organizing and coordinating engaging events and activities, from academic workshops to social gatherings, ensuring smooth execution and high participant satisfaction." },
@@ -216,7 +230,7 @@ function App() {
           <div className="flex justify-between items-center h-16">
             <div className="font-bold text-xl">TK</div>
             <div className="hidden md:flex space-x-8">
-              {["About", "Research", "Experience", "Projects", "Interests", "Blog", "Contact"].map((item) => (
+              {["Experience", "About", "Research", "Projects", "Interests", "Blog", "Contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -259,7 +273,7 @@ function App() {
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Mail className="h-4 w-4" />
-                  <span>tejas5589@gmail.com</span>
+                  <span>khandwekar.t@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Phone className="h-4 w-4" />
@@ -308,6 +322,51 @@ function App() {
             >
               <ChevronDown className="h-6 w-6 text-muted-foreground" />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Professional Experience - moved up */}
+      <section id="experience" className="py-20 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">Professional Experience</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Showcasing my professional journey and key achievements in data science and analytics.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {experiences.map((exp, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                      <CardTitle className="flex items-center gap-2">
+                        <Briefcase className="h-5 w-5" />
+                        {exp.title}
+                      </CardTitle>
+                      <CardDescription className="text-base">
+                        {exp.company} • {exp.location}
+                      </CardDescription>
+                    </div>
+                    <Badge variant="outline" className="w-fit">
+                      {exp.period}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {exp.achievements.map((achievement, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <ArrowRight className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -498,88 +557,50 @@ function App() {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Professional Experience</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Showcasing my professional journey and key achievements in data science and analytics.
-            </p>
-          </div>
-
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <div>
-                      <CardTitle className="flex items-center gap-2">
-                        <Briefcase className="h-5 w-5" />
-                        {exp.title}
-                      </CardTitle>
-                      <CardDescription className="text-base">
-                        {exp.company} • {exp.location}
-                      </CardDescription>
-                    </div>
-                    <Badge variant="outline" className="w-fit">
-                      {exp.period}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <ArrowRight className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Experience Section moved above */}
 
       {/* Projects Section */}
       <section id="projects" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Featured Projects</h2>
+            <h2 className="text-3xl font-bold mb-4">Major Projects</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              A selection of my key academic and research projects, highlighting my analytical and technical skills.
+              Consolidated showcase of research, industry, and hackathon projects with clear goals, methods, and outcomes.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className={`h-full ${project.type === 'research' ? 'border-primary/50 bg-primary/5' : ''}`}>
+          {(() => {
+            const withImages = projects.filter(p => Array.isArray(p.images) && p.images.length > 0)
+            const withoutImages = projects.filter(p => !Array.isArray(p.images) || p.images.length === 0)
+
+            const renderCard = (project, index, hasImages) => (
+              <Card
+                key={index}
+                className={`h-full`}
+              >
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    {project.type === 'research' ? <FileText className="h-5 w-5" /> : <Code className="h-5 w-5" />}
+                    <Code className="h-5 w-5" />
                     {project.title}
-                    {project.type === 'research' && <Badge variant="secondary" className="ml-2">Research</Badge>}
                   </CardTitle>
                   <CardDescription>
                     {project.organization} • {project.period}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className={`space-y-4 ${hasImages ? '' : 'min-h-48'}`}>
                   <p className="text-sm text-muted-foreground">{project.description}</p>
-                  {project.images && project.images.length > 0 && (
+                  {hasImages && (
                     <div className={project.images.length === 1 ? 'text-center' : 'grid grid-cols-2 gap-2'}>
                       {project.images.map((img, i) => (
-                        <img 
-                          key={i} 
-                          src={img} 
-                          alt={`Project figure ${i+1}`} 
+                        <img
+                          key={i}
+                          src={img}
+                          alt={`Project figure ${i+1}`}
                           className={`rounded border object-contain ${
-                            project.images.length === 1 
-                              ? 'max-w-md mx-auto max-h-64' 
+                            project.images.length === 1
+                              ? 'max-w-md mx-auto max-h-64'
                               : 'w-full max-h-40'
-                          }`} 
+                          }`}
                         />
                       ))}
                     </div>
@@ -593,8 +614,26 @@ function App() {
                   </div>
                 </CardContent>
               </Card>
-            ))}
-          </div>
+            )
+
+            return (
+              <>
+                {/* Group: Projects with images */}
+                {withImages.length > 0 && (
+                  <div className="grid md:grid-cols-2 gap-8 mb-12">
+                    {withImages.map((p, i) => renderCard(p, `img-${i}`, true))}
+                  </div>
+                )}
+
+                {/* Group: Projects without images */}
+                {withoutImages.length > 0 && (
+                  <div className="grid md:grid-cols-2 gap-8">
+                    {withoutImages.map((p, i) => renderCard(p, `noimg-${i}`, false))}
+                  </div>
+                )}
+              </>
+            )
+          })()}
         </div>
       </section>
 
@@ -684,7 +723,7 @@ function App() {
                       <Mail className="h-5 w-5 text-primary" />
                       <div>
                         <p className="font-medium">Email</p>
-                        <p className="text-sm text-muted-foreground">tejas5589@gmail.com</p>
+                        <p className="text-sm text-muted-foreground">khandwekar.t@gmail.com</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -722,7 +761,7 @@ function App() {
                     <Button 
                       variant="outline" 
                       className="w-full gap-2"
-                      onClick={() => window.open('/resume.pdf', '_blank')}
+                      onClick={() => window.open(resume, '_blank')}
                     >
                       <Download className="h-4 w-4" />
                       Download Resume
