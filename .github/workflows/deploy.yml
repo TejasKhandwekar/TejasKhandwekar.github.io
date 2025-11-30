@@ -29,20 +29,24 @@ jobs:
         node-version: '20'
         cache: 'npm'
         
-    # Step 3: Install project dependencies using npm ci for a clean install
+    # Step 3: Remove outdated lock file causing date-fns peer conflict
+    - name: Remove outdated lock file
+      run: rm -f package-lock.json
+
+    # Step 4: Install project dependencies (regenerates lock file with date-fns@3.x)
     - name: Install dependencies
-      run: npm ci --legacy-peer-deps
+      run: npm install --legacy-peer-deps
       
-    # Step 4: Run the build script defined in package.json
+    # Step 5: Run the build script defined in package.json
     - name: Build
       run: npm run build
       
-    # Step 5: Configure GitHub Pages settings
+    # Step 6: Configure GitHub Pages settings
     # UPDATED to the latest version v5
     - name: Setup Pages
       uses: actions/configure-pages@v5
       
-    # Step 6: Upload the build artifact for GitHub Pages
+    # Step 7: Upload the build artifact for GitHub Pages
     # UPDATED to the latest compatible version v3
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3 
@@ -50,7 +54,7 @@ jobs:
         # Upload the 'dist' directory which contains the build output
         path: './dist'
         
-    # Step 7: Deploy the artifact to GitHub Pages
+    # Step 8: Deploy the artifact to GitHub Pages
     # UPDATED to the latest version v4
     - name: Deploy to GitHub Pages
       id: deployment

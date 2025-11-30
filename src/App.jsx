@@ -89,9 +89,9 @@ function App() {
       location: "Atlanta, GA",
       period: "Aug 2025 - Present",
       achievements: [
-        "Engineering unsupervised learning pipelines on 1 Hz vehicle telemetry to detect near miss collisions, compute Time to Collision metrics, and generate risk scores informing insurance pricing and safety analytics.",
-        "Applying signal processing techniques and Dynamic Time Warping to discover, cluster, and classify driving patterns, surfacing rare but critical anomalous behaviors across millions of datapoints.",
-        "Framing methodology analogous to anomaly detection in high-frequency trading streams, emphasizing rare high-impact events over average behavior."
+        "Engineering unsupervised learning pipelines on 1 Hz vehicle telemetry data to detect near-miss collisions. Computing Time to Collision metrics and generating risk scores that inform insurance pricing and safety analytics.",
+        "Applying signal processing techniques and Dynamic Time Warping to discover, cluster, and classify driving patterns. Surfacing rare but critical anomalous behaviors across millions of data points.",
+        "Framing methodology as analogous to anomaly detection in high-frequency trading streams. Emphasizing rare high-impact events rather than average behavior."
       ]
     },
     {
@@ -100,12 +100,12 @@ function App() {
       location: "Bengaluru, India",
       period: "Jul 2022 - Jun 2025",
       achievements: [
-        "Built and co-owned a global demand forecasting pipeline for thousands of SKUs using ensemble time series models tailored to product/region clusters, validated via planner feedback and backtesting; ~10% accuracy improvement over vendor models, unlocking ~$50M working capital savings and better service levels.",
-        "Developed statistical and ML price forecasting models with a custom loss prioritizing directional correctness at a 3-month horizon; ~72% directional accuracy supporting trading and capacity planning, ~$2M/year financial benefit.",
-        "Designed and productionized RFM-based customer segmentation on 2M+ transactions; clustering created actionable segments that lifted upsell conversion ~5%, ~$1.3M incremental annual revenue, and reduced analysis time from months to hours via Dockerized automation.",
-        "Led GenAI-driven automation for contracts and invoicing: AWS Textract for field extraction; Bedrock-based RAG 'GenAI calculator' to compute/reconcile fees across 100+ contracts and thousands of invoices; integrated into Glue ETL to auto-flag discrepancies; identified ~$2.9M in overbilling and cut manual validation.",
-        "Built a contract analysis dashboard combining regex pattern matching with a BERT model to flag non-standard clauses and high-risk contracts, using risk scores to standardize language and reduce review time.",
-        "Implemented a Power BI + SharePoint information portal centralizing deliverables, dashboards, and documentation, improving discoverability and self-service for stakeholders."
+        "Built and co-owned a global demand forecasting pipeline for thousands of SKUs using ensemble time series models tailored to product and region clusters. Validated via planner feedback and backtesting. Achieved approximately 10% accuracy improvement over vendor models, unlocking approximately $50M in working capital savings and better service levels.",
+        "Developed statistical and ML-based price forecasting models with a custom loss function prioritizing directional correctness at a 3-month horizon. Achieved approximately 72% directional accuracy, supporting trading and capacity planning decisions. Delivered approximately $2M per year in financial benefit.",
+        "Designed and productionized RFM-based customer segmentation on 2M+ transactions. Clustering created actionable segments that lifted upsell conversion by approximately 5%, generating approximately $1.3M in incremental annual revenue. Reduced analysis time from months to hours via Dockerized automation.",
+        "Led GenAI-driven automation for contracts and invoicing using AWS Textract for field extraction. Built a Bedrock-based RAG 'GenAI calculator' to compute and reconcile fees across 100+ contracts and thousands of invoices. Integrated into Glue ETL workflows to automatically flag discrepancies. Identified approximately $2.9M in overbilling and substantially reduced manual validation effort.",
+        "Built a contract analysis dashboard combining regex pattern matching with a BERT model to flag non-standard clauses and high-risk contracts. Used risk scores to standardize language and reduce review time.",
+        "Implemented a Power BI and SharePoint information portal that centralized project deliverables, dashboards, and documentation. Improved accessibility and created a self-service knowledge base for stakeholders."
       ]
     }
   ]
@@ -262,8 +262,8 @@ function App() {
               
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Experienced Data Scientist with 3+ years of expertise in machine learning, AI, and advanced analytics. 
-                Currently pursuing MS Analytics at Georgia Tech while conducting cutting-edge research in time series 
-                forecasting and foundation models.
+                Currently pursuing MS Analytics at Georgia Tech while conducting cutting-edge research at Ford on autonomous 
+                driving telemetry, time series forecasting, and foundation models.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -317,7 +317,7 @@ function App() {
 
           <div className="text-center mt-12">
             <button
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection('experience')}
               className="animate-bounce"
             >
               <ChevronDown className="h-6 w-6 text-muted-foreground" />
@@ -331,9 +331,6 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Professional Experience</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Showcasing my professional journey and key achievements in data science and analytics.
-            </p>
           </div>
 
           <div className="space-y-8">
