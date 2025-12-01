@@ -100,10 +100,10 @@ function App() {
       location: "Bengaluru, India",
       period: "Jul 2022 - Jun 2025",
       achievements: [
-        "Built and co-owned a global demand forecasting pipeline for thousands of SKUs using ensemble time series models tailored to product and region clusters. Validated via planner feedback and backtesting. Achieved approximately 10% accuracy improvement over vendor models, unlocking approximately $50M in working capital savings and better service levels.",
-        "Developed statistical and ML-based price forecasting models with a custom loss function prioritizing directional correctness at a 3-month horizon. Achieved approximately 72% directional accuracy, supporting trading and capacity planning decisions. Delivered approximately $2M per year in financial benefit.",
-        "Designed and productionized RFM-based customer segmentation on 2M+ transactions. Clustering created actionable segments that lifted upsell conversion by approximately 5%, generating approximately $1.3M in incremental annual revenue. Reduced analysis time from months to hours via Dockerized automation.",
-        "Led GenAI-driven automation for contracts and invoicing using AWS Textract for field extraction. Built a Bedrock-based RAG 'GenAI calculator' to compute and reconcile fees across 100+ contracts and thousands of invoices. Integrated into Glue ETL workflows to automatically flag discrepancies. Identified approximately $2.9M in overbilling and substantially reduced manual validation effort.",
+        "Built and co-owned a global demand forecasting pipeline for thousands of SKUs using ensemble time series models tailored to product and region clusters. Validated via planner feedback and backtesting. ~10% accuracy improvement over vendor models, unlocking ~$50M in working capital savings and better service levels.",
+        "Developed statistical and ML-based price forecasting models with a custom loss function prioritizing directional correctness at a 3-month horizon. ~72% directional accuracy, supporting trading and capacity planning decisions. ~$2M per year in financial benefit.",
+        "Designed and productionized RFM-based customer segmentation on 2M+ transactions. Clustering created actionable segments that lifted upsell conversion ~5%, generating ~$1.3M in incremental annual revenue. Reduced analysis time from months to hours via Dockerized automation.",
+        "Led GenAI-driven automation for contracts and invoicing using AWS Textract for field extraction. Built a Bedrock-based RAG 'GenAI calculator' to compute and reconcile fees across 100+ contracts and thousands of invoices. Integrated into Glue ETL workflows to automatically flag discrepancies. Identified ~$2.9M in overbilling and substantially reduced manual validation effort.",
         "Built a contract analysis dashboard combining regex pattern matching with a BERT model to flag non-standard clauses and high-risk contracts. Used risk scores to standardize language and reduce review time.",
         "Implemented a Power BI and SharePoint information portal that centralized project deliverables, dashboards, and documentation. Improved accessibility and created a self-service knowledge base for stakeholders."
       ]
@@ -256,7 +256,7 @@ function App() {
                   Tejas Khandwekar
                 </h1>
                 <p className="text-xl sm:text-2xl text-muted-foreground">
-                  Data Scientist & Analytics Professional | Seeking Summer 2026 Internships
+                  Data Science and Analytics Professional | Seeking Summer 2026 Internships
                 </p>
               </div>
               
