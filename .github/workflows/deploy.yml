@@ -36,8 +36,8 @@ jobs:
     # Step 4: Install project dependencies (regenerates lock file with date-fns@3.x)
     - name: Install dependencies
       run: |
-        npm install --legacy-peer-deps
-        chmod +x node_modules/.bin/vite
+        rm -rf node_modules
+        npm install --legacy-peer-deps --include=optional
       
     # Step 5: Run the build script defined in package.json
     - name: Build
