@@ -39,7 +39,7 @@ jobs:
       
     # Step 5: Run the build script defined in package.json
     - name: Build
-      run: npm run build
+      run: npx vite build
       
     # Step 6: Configure GitHub Pages settings
     # UPDATED to the latest version v5
