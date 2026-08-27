@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
-import { Separator } from '@/components/ui/separator.jsx'
 import {
   Mail,
   Phone,
@@ -11,15 +10,12 @@ import {
   Linkedin,
   ExternalLink,
   ChevronDown,
-  BookOpen,
   Briefcase,
-  GraduationCap,
   Award,
   Code,
   Brain,
   TrendingUp,
   Users,
-  Calendar,
   ArrowRight,
   Download,
   Star,
@@ -30,24 +26,24 @@ import {
   FileText
 } from 'lucide-react'
 import tejasPhoto from './assets/tejas-photo.jpg'
-import georgiaTechPhoto from './assets/georgia-tech.jpeg'
-import figure1 from './assets/figure1.png'
 import figure2 from './assets/figure2.png'
 import perceptronTrend1 from './assets/perceptron-trend-1.png'
 import perceptronTrend2 from './assets/perceptron-trend-2.png'
-import porousMedia1 from './assets/porous-media-1.png'
 import ietsModelsTrends from './assets/iets-models-trends.png'
 import whyHere1 from './assets/why_here_1.png'
 import whyHere2 from './assets/why_here_2.png'
-import resume from './assets/ML Internship Resume.pdf'
+import appleLogo from './assets/apple-logo.svg'
 import './App.css'
+
+const resume = '/resume.pdf'
+const paper = '/papers/comparison-of-time-series-foundational-models.pdf'
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero')
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'experience', 'about', 'research', 'projects', 'interests', 'blog', 'contact']
+      const sections = ['hero', 'experience', 'about', 'research', 'projects', 'interests', 'contact']
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -76,22 +72,33 @@ function App() {
   }
 
   const skills = {
-    'Programming & Tools': ['Python', 'R', 'SQL', 'Power BI', 'AWS', 'Microsoft Office Suite', 'Git', 'Docker'],
-    'Machine Learning & AI': ['Machine Learning', 'Deep Learning', 'NLP', 'Gen AI', 'LLMs', 'RAG', 'Computer Vision', 'Time Series Models'],
-    'Analytics & Data Science': ['Time Series Analysis', 'Demand Forecasting', 'Statistical Analysis', 'Customer Segmentation', 'Anomaly Detection', 'Supply Chain Analytics', 'A/B Testing', 'Data Visualization'],
-    'Professional Skills': ['Analytical Thinking', 'Strong Communication', 'Collaborative', 'Adaptable', 'Version Control', 'Actionable Insights', 'Problem Solving', 'Project Management']
+    'Programming & Tools': ['Python', 'R', 'SQL', 'Power BI', 'Excel', 'Git', 'Docker'],
+    'Machine Learning & AI': ['Machine Learning', 'Deep Learning', 'Reinforcement Learning', 'NLP', 'Language Models', 'Generative AI', 'RAG', 'Embeddings', 'Vector Databases', 'Anomaly Detection'],
+    'Analytics & Experimentation': ['Statistical Analysis', 'A/B Testing', 'Hypothesis Testing', 'Product Analytics', 'Funnel Analytics', 'Customer Journey Mapping', 'Voice of Customer Analytics', 'Customer Segmentation'],
+    'Cloud & Data Platforms': ['Databricks', 'Spark', 'AWS Bedrock', 'Textract', 'Glue', 'S3', 'Azure', 'GCP']
   }
 
   const experiences = [
     {
-      title: "Graduate Research Assistant",
+      title: "Data Scientist Intern",
+      company: "Apple",
+      location: "",
+      period: "May 2026 - Aug 2026",
+      logo: appleLogo,
+      logoAlt: "Apple logo",
+      achievements: [
+        "Built anomaly detection models on millions of AppleCare customer cases to identify abnormal product feedback patterns, surface emerging software and hardware issues, and support product issue prioritization.",
+        "Developed customer journey analytics pipelines to connect related support cases across Apple products, trace escalation paths, and generate early-warning signals for engineering and operations teams."
+      ]
+    },
+    {
+      title: "Graduate Research Assistant, Machine Learning",
       company: "Ford / Georgia Institute of Technology",
       location: "Atlanta, GA",
-      period: "Aug 2025 - Present",
+      period: "Aug 2025 - May 2026",
       achievements: [
-        "Engineering unsupervised learning pipelines on 1 Hz vehicle telemetry data to detect near-miss collisions. Computing Time to Collision metrics and generating risk scores that inform insurance pricing and safety analytics.",
-        "Applying signal processing techniques and Dynamic Time Warping to discover, cluster, and classify driving patterns. Surfacing rare but critical anomalous behaviors across millions of data points.",
-        "Framing methodology as analogous to anomaly detection in high-frequency trading streams. Emphasizing rare high-impact events rather than average behavior."
+        "Engineered unsupervised machine learning pipelines across millions of 1 Hz vehicle-telemetry observations to detect critical near-miss events and calculate Time-to-Collision risk metrics.",
+        "Developed event-segmentation and similarity-search workflows using signal processing, variable-length windows, and z-normalized Dynamic Time Warping to identify rare driving patterns in highly imbalanced telemetry data."
       ]
     },
     {
@@ -100,12 +107,11 @@ function App() {
       location: "Bengaluru, India",
       period: "Jul 2022 - Jun 2025",
       achievements: [
-        "Built and co-owned a global demand forecasting pipeline for thousands of SKUs using ensemble time series models tailored to product and region clusters. Validated via planner feedback and backtesting. ~10% accuracy improvement over vendor models, unlocking ~$50M in working capital savings and better service levels.",
-        "Developed statistical and ML-based price forecasting models with a custom loss function prioritizing directional correctness at a 3-month horizon. ~72% directional accuracy, supporting trading and capacity planning decisions. ~$2M per year in financial benefit.",
-        "Designed and productionized RFM-based customer segmentation on 2M+ transactions. Clustering created actionable segments that lifted upsell conversion ~5%, generating ~$1.3M in incremental annual revenue. Reduced analysis time from months to hours via Dockerized automation.",
-        "Led GenAI-driven automation for contracts and invoicing using AWS Textract for field extraction. Built a Bedrock-based RAG 'GenAI calculator' to compute and reconcile fees across 100+ contracts and thousands of invoices. Integrated into Glue ETL workflows to automatically flag discrepancies. Identified ~$2.9M in overbilling and substantially reduced manual validation effort.",
-        "Built a contract analysis dashboard combining regex pattern matching with a BERT model to flag non-standard clauses and high-risk contracts. Used risk scores to standardize language and reduce review time.",
-        "Implemented a Power BI and SharePoint information portal that centralized project deliverables, dashboards, and documentation. Improved accessibility and created a self-service knowledge base for stakeholders."
+        "Built Dockerized customer segmentation models on 2M+ transaction records using RFM clustering; designed A/B and hypothesis tests to validate targeting strategies, driving a 5% upsell conversion lift and $1.3M in incremental annual revenue.",
+        "Automated contract and invoice intelligence workflows using AWS Textract, Bedrock, and RAG-based attribute extraction; integrated outputs with Glue ETL pipelines to identify discrepancies and deliver $2.9M in savings.",
+        "Built a BERT and regex-based contract analytics dashboard to classify discrepancy patterns, score risk, and help business stakeholders prioritize high-impact supplier issues.",
+        "Co-developed global forecasting models for thousands of SKUs using clustered ensemble models, backtesting, and planner feedback to improve forecast accuracy by 10% and support $50M in working-capital optimization.",
+        "Developed statistical price forecasting models with custom loss functions, achieving 72% directional accuracy at a 3-month horizon and supporting trading and capacity-planning decisions with $2M in annual savings."
       ]
     }
   ]
@@ -115,9 +121,36 @@ function App() {
       title: "Unsupervised Detection of Critical Near Miss Events in Urban and Highway Driving",
       organization: "Ford / Georgia Tech",
       period: "Aug 2025 - Present",
-      description: "Detect, characterize, and quantify near miss driving events from real-world 1 Hz vehicle telemetry to support insurance, safety analytics, and product design decisions. Built ingestion and windowing, anomaly detection and clustering, DTW-based sequence similarity, and Time to Collision risk scoring for interpretable pattern libraries.",
+      description: "Engineered unsupervised learning pipelines on 1 Hz vehicle telemetry to detect near-miss collisions, quantify Time-to-Collision events, and surface rare driving patterns from millions of telemetry points.",
       tags: ["Python", "Time Series", "DTW", "Anomaly Detection", "Unsupervised"],
       type: "research",
+      images: []
+    },
+    {
+      title: "Adaptive Story Generation and Interactive Mystery Engine",
+      organization: "Georgia Tech",
+      period: "Jan 2026 - May 2026",
+      description: "Built an OpenRouter-based mystery engine that interprets open-ended player actions and keeps responses tied to a persistent world model. Designed crime-ledger generation, plot validation, causal event graphs, action classification, and story repair when players disrupt planned evidence paths.",
+      tags: ["Python", "Language Models", "OpenRouter", "World Models", "Event Graphs", "Agents"],
+      type: "academic",
+      images: []
+    },
+    {
+      title: "Cross-Lingual Negotiation Agents",
+      organization: "Research / NeurIPS 2026 Submission",
+      period: "Jul 2026 - Sep 2026",
+      description: "Built a multi-agent negotiation framework using Gemini through Vertex AI and Qwen through OpenRouter. Added structured actions, stopping rules, parser retries, reproducible transcripts, and an evaluation pipeline across 430 valid negotiations and 4,580 turns.",
+      tags: ["Python", "Multi-Agent AI", "Model Evaluation", "Gemini", "Qwen", "Cross-Lingual"],
+      type: "research",
+      images: []
+    },
+    {
+      title: "Multi-Agent Soccer AI with Deep Reinforcement Learning",
+      organization: "Georgia Tech",
+      period: "Jan 2026 - May 2026",
+      description: "Designed and trained a PPO-based multi-agent reinforcement learning policy using Ray RLlib and self-play in the SoccerTwos environment. Improved policy performance through reward shaping, curriculum learning, and checkpoint-based distributed training, then packaged the trained agent for automated inference and evaluation.",
+      tags: ["Python", "PPO", "Ray RLlib", "Self-Play", "Deep RL", "Multi-Agent Systems"],
+      type: "academic",
       images: []
     },
     {
@@ -130,13 +163,14 @@ function App() {
       images: [ietsModelsTrends]
     },
     {
-      title: "Comparison of Time Series Foundational Models for Forecasting",
-      organization: "Independent / Academic",
+      title: "Comparison of Time Series Foundational Models",
+      organization: "NeurIPS 2024 Workshop Submission",
       period: "Jun 2024 - Jul 2025",
-      description: "Systematically compare foundation models (Chronos, TimeGPT, Moirai) against strong statistical and ML baselines in a multi-origin framework; found tuned statistical models outperform foundation models by ~36% in RMSSE.",
+      description: "Co-authored a study comparing statistical, machine learning, neural network, and foundation models for time series forecasting. Using multi-origin rolling forecasts and four error metrics, the study found that traditional statistical methods remained more accurate and faster for the evaluated low-frequency datasets.",
       tags: ["Python", "Foundation Models", "Forecasting", "Benchmarking", "RMSSE"],
       type: "research",
-      images: [figure2]
+      images: [figure2],
+      link: paper
     },
     {
       title: "Automated Vibration Classification for Vehicles using Deep CNNs",
@@ -150,8 +184,8 @@ function App() {
     {
       title: "WhyHere - Explainable Top N Location Recommender for Atlanta",
       organization: "Georgia Tech (CSE 6242)",
-      period: "2025",
-      description: "Transparent, user-controllable recommender: users rank 8 features converted to Borda weights; Databricks distance-decay scoring over H3 hex grid (~2,143 units); Flask backend computes suitability and explanations; visualization evaluated (DBSCAN vs thresholds) choosing interpretable thresholding; mock frontend with map and CSV export.",
+      period: "Aug 2025 - Dec 2025",
+      description: "Built an explainable recommendation system that ranks Atlanta locations using user-weighted lifestyle, safety, transit, and amenity features, then returns transparent score breakdowns for each recommendation. Processed geospatial datasets with Databricks and Spark, converted raw data into H3 hexagonal units, and used a 22-person survey to choose the clearest product experience.",
       tags: ["Databricks", "Spark", "Geospatial", "H3", "Flask", "Explainable AI"],
       type: "academic",
       images: [whyHere1, whyHere2]
@@ -190,36 +224,14 @@ function App() {
     { icon: Brain, title: "Autonomous Driving Analytics", description: "Telemetry analysis, anomaly detection, DTW similarity, risk scoring for safety and insurance." },
     { icon: Code, title: "Time Series Data Science", description: "Classical + ML forecasting, intermittent demand, multi-origin evaluation, interpretable modeling." },
     { icon: Award, title: "Financial Data Science", description: "Market signals, price direction modeling, anomaly detection in financial time series." },
-    { icon: Telescope, title: "Astronomy & Stargazing", description: "Passionate about exploring the cosmos and celestial phenomena, regularly attending stargazing events and following astronomical discoveries." },
-    { icon: Brain, title: "Emerging Tech & AI Trends", description: "Actively researching and staying current with the latest developments in AI, machine learning, and other disruptive technologies, attending webinars and conferences." },
-    { icon: Users, title: "Event Planning", description: "Experienced in organizing and coordinating engaging events and activities, from academic workshops to social gatherings, ensuring smooth execution and high participant satisfaction." },
-    { icon: Mic, title: "Public Speaking", description: "Comfortable presenting complex topics to diverse audiences, including technical presentations and motivational talks, with a focus on clear and engaging communication." },
-    { icon: Trophy, title: "Trivia & Quizzing", description: "An avid participant in competitive quizzing and knowledge competitions, enjoying the challenge of diverse topics and quick recall." },
-    { icon: Gamepad2, title: "Board Games", description: "Engaging in strategic thinking through various board and strategy games, appreciating the blend of logic, planning, and social interaction." },
-    { icon: FileText, title: "Creative Writing", description: "Expressing ideas through creative and technical writing, including short stories, articles, and detailed project documentation." },
-    { icon: Star, title: "Volunteering", description: "Actively contributing to student activities and community initiatives, believing in giving back and fostering a supportive environment." }
-  ]
-
-  const blogPosts = [
-    {
-      title: "Foundation Models vs Traditional Methods in Time Series Forecasting",
-      date: "December 2024",
-      excerpt: "Insights from our NeurIPS 2024 research on comparing foundation models with established forecasting methods. This draft explores the nuances and practical implications of each approach.",
-      tags: ["Research", "Foundation Models", "Time Series", "Forecasting"],
-      featured: true
-    },
-    {
-      title: "The Future of Time Series Forecasting in Supply Chain",
-      date: "Coming Soon",
-      excerpt: "Exploring how advanced ML models are revolutionizing demand forecasting and supply chain optimization, focusing on real-world applications and challenges.",
-      tags: ["Forecasting", "Supply Chain", "ML", "Industry Trends"]
-    },
-    {
-      title: "GenAI in Enterprise: Lessons from Real-World Implementation",
-      date: "Coming Soon",
-      excerpt: "Insights from implementing GenAI solutions at scale in enterprise environments, discussing best practices, challenges, and success stories.",
-      tags: ["GenAI", "Enterprise", "Implementation", "AI Ethics"]
-    }
+    { icon: Telescope, title: "Astronomy & Stargazing", description: "Stargazing nights, astronomy missions, and the occasional deep dive into sky maps." },
+    { icon: Brain, title: "Tech Reading", description: "Research talks, engineering blogs, and new AI tools worth testing." },
+    { icon: Users, title: "Event Planning", description: "Academic, recruiting, and community events from planning through day-of coordination." },
+    { icon: Mic, title: "Public Speaking", description: "Technical talks, workshops, and team presentations for mixed audiences." },
+    { icon: Trophy, title: "Trivia & Quizzing", description: "Competitive quizzing, general knowledge contests, and fast recall under pressure." },
+    { icon: Gamepad2, title: "Board Games", description: "Strategy games with a mix of planning, negotiation, and table talk." },
+    { icon: FileText, title: "Creative Writing", description: "Short fiction, project notes, and clear technical writing." },
+    { icon: Star, title: "Volunteering", description: "Student activities, recruiting support, and community work." }
   ]
 
   return (
@@ -230,7 +242,7 @@ function App() {
           <div className="flex justify-between items-center h-16">
             <div className="font-bold text-xl">TK</div>
             <div className="hidden md:flex space-x-8">
-              {["Experience", "About", "Research", "Projects", "Interests", "Blog", "Contact"].map((item) => (
+              {["Experience", "About", "Research", "Projects", "Interests", "Contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -256,15 +268,24 @@ function App() {
                   Tejas Khandwekar
                 </h1>
                 <p className="text-xl sm:text-2xl text-muted-foreground">
-                  Data Science and Analytics Professional | Seeking Summer 2026 Internships
+                  Data Scientist | MSCS Machine Learning Candidate | December 2026
                 </p>
               </div>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Experienced Data Scientist with 3+ years of expertise in machine learning, AI, and advanced analytics. 
-                Currently pursuing MS Analytics at Georgia Tech while conducting cutting-edge research at Ford on autonomous 
-                driving telemetry, time series forecasting, and foundation models.
+                Data Scientist with 3+ years of industry experience at ExxonMobil, a 2026 Apple Data Scientist Internship, 
+                and graduate machine learning research with Ford and Georgia Tech. Currently pursuing an MS in Computer Science 
+                with a Machine Learning specialization at Georgia Tech, graduating in December 2026.
               </p>
+
+              <div className="inline-flex items-center gap-3 rounded-md border bg-card px-4 py-3 shadow-sm">
+                <img
+                  src={appleLogo}
+                  alt="Apple logo"
+                  className="h-6 w-6 object-contain"
+                />
+                <span className="text-sm font-medium">Apple Data Scientist Intern, May-Aug 2026</span>
+              </div>
 
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 text-muted-foreground">
@@ -281,7 +302,7 @@ function App() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-3">
                 <Button 
                   variant="outline" 
                   size="sm" 
@@ -299,6 +320,14 @@ function App() {
                 >
                   <Github className="h-4 w-4" />
                   GitHub
+                </Button>
+                <Button
+                  size="sm"
+                  className="gap-2"
+                  onClick={() => window.open(resume, '_blank')}
+                >
+                  <Download className="h-4 w-4" />
+                  Resume
                 </Button>
               </div>
             </div>
@@ -340,11 +369,19 @@ function App() {
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <div>
                       <CardTitle className="flex items-center gap-2">
-                        <Briefcase className="h-5 w-5" />
+                        {exp.logo ? (
+                          <img
+                            src={exp.logo}
+                            alt={exp.logoAlt}
+                            className="h-7 w-7 rounded-md border bg-white p-1 object-contain"
+                          />
+                        ) : (
+                          <Briefcase className="h-5 w-5" />
+                        )}
                         {exp.title}
                       </CardTitle>
                       <CardDescription className="text-base">
-                        {exp.company} • {exp.location}
+                        {exp.company}{exp.location ? ` | ${exp.location}` : ''}
                       </CardDescription>
                     </div>
                     <Badge variant="outline" className="w-fit">
@@ -372,9 +409,9 @@ function App() {
       <section id="about" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">About My Research & Passion</h2>
+            <h2 className="text-3xl font-bold mb-4">About</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              My work focuses on solving complex business challenges through advanced analytics and AI
+              I work on forecasting, customer analytics, anomaly detection, and applied machine learning systems.
             </p>
           </div>
 
@@ -384,35 +421,33 @@ function App() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Users className="h-5 w-5" />
-                    Work Philosophy & Research Passions
+                    What I Work On
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-sm text-muted-foreground">
-                    I believe in leveraging cutting-edge AI technologies to solve complex business challenges 
-                    and drive data-driven decision making. My approach combines rigorous statistical methods 
-                    with practical business understanding to deliver solutions that create real value.
+                    My work sits between product data, operations, and machine learning. I like models that can be checked, 
+                    explained, and used by planners, engineers, or support teams.
                   </p>
                   <div>
                     <h4 className="font-semibold mb-2">Time Series Forecasting</h4>
                     <p className="text-sm text-muted-foreground">
-                      Developing innovative models for demand forecasting and supply chain optimization, 
-                      with focus on intermittent demand patterns and ensemble methods. Currently researching 
-                      foundation models vs traditional approaches.
+                      SKU demand, price signals, intermittent demand, and benchmark studies that compare foundation models 
+                      with statistical baselines.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Natural Language Processing</h4>
+                    <h4 className="font-semibold mb-2">Text Analytics and RAG</h4>
                     <p className="text-sm text-muted-foreground">
-                      Advancing multi-hop question answering systems and implementing GenAI solutions 
-                      for enterprise applications using RAG and LLMs.
+                      Contract, invoice, and customer-feedback workflows using Textract, Bedrock, BERT, retrieval, and 
+                      structured evaluation.
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-2">Applied Machine Learning</h4>
                     <p className="text-sm text-muted-foreground">
-                      Creating production-ready ML systems that deliver measurable business impact, 
-                      from customer segmentation to automated contract analysis.
+                      Segmentation, anomaly detection, risk scoring, and recommendation systems that tie model outputs 
+                      back to business decisions.
                     </p>
                   </div>
                 </CardContent>
@@ -424,30 +459,28 @@ function App() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <TrendingUp className="h-5 w-5" />
-                    Current Research
+                    Current Focus
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-semibold mb-2">MS Analytics at Georgia Tech</h4>
+                    <h4 className="font-semibold mb-2">MS Computer Science at Georgia Tech</h4>
                     <p className="text-sm text-muted-foreground">
-                      Currently pursuing advanced studies in analytics, focusing on cutting-edge 
-                      methodologies in machine learning and statistical modeling.
+                      MS in Computer Science with a Machine Learning specialization. Expected graduation: December 2026.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Lancaster University Collaboration</h4>
+                    <h4 className="font-semibold mb-2">Apple Data Science Internship</h4>
                     <p className="text-sm text-muted-foreground">
-                      Working with Prof. Ivan on innovation state space models (iETS) for 
-                      intermittent demand forecasting in retail environments.
+                      Customer case anomaly detection, product feedback patterns, escalation paths, and early-warning 
+                      signals for engineering and operations teams.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">NeurIPS 2024 Workshop Submission</h4>
+                    <h4 className="font-semibold mb-2">Time Series Paper</h4>
                     <p className="text-sm text-muted-foreground">
-                      Co-authored a research paper draft on comparing time series foundation models with traditional 
-                      methods, which was submitted to the NeurIPS 2024 Workshop. This work highlights my contribution to 
-                      rigorous empirical evaluation in the field.
+                      Co-authored Comparison of Time Series Foundational Models, submitted to the NeurIPS 2024 Workshop 
+                      on Time Series in the Age of Large Models.
                     </p>
                   </div>
                 </CardContent>
@@ -463,7 +496,7 @@ function App() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Research Highlights</h2>
             <p className="text-lg text-muted-foreground">
-              Key contributions to time series forecasting and foundation models
+              Time series forecasting work with a public paper and reproducible comparisons.
             </p>
           </div>
 
@@ -471,7 +504,7 @@ function App() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <FileText className="h-5 w-5" />
-                Comparison of Time Series Foundational Models (Draft)
+                Comparison of Time Series Foundational Models
               </CardTitle>
               <CardDescription>
                 Submitted to NeurIPS 2024 Workshop on Time Series in the Age of Large Models
@@ -479,32 +512,37 @@ function App() {
             </CardHeader>
             <CardContent className="space-y-6">
               <p className="text-muted-foreground">
-                This research paper draft, which I co-authored, rigorously evaluates foundation models (Chronos, TimeGPT, Moirai) against established 
-                neural networks, machine learning, and statistical benchmarks. Through a comprehensive empirical evaluation 
-                using rolling time origins and robust error metrics, we found that while foundation models show promise and outperform 
-                simple benchmarks and most neural networks, traditional statistical methods still demonstrate superior performance 
-                for low-frequency monthly data. This work emphasizes the importance of robust evaluation frameworks for advanced 
-                forecasting techniques.
+                This paper compares Chronos, TimeGPT, and Moirai with neural network, machine learning, and statistical 
+                benchmarks. With rolling time origins and multiple error metrics, traditional statistical methods performed 
+                best on the evaluated low-frequency datasets and were faster to run.
               </p>
+              <Button
+                variant="outline"
+                className="gap-2"
+                onClick={() => window.open(paper, '_blank')}
+              >
+                <FileText className="h-4 w-4" />
+                Open Public Paper
+              </Button>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold mb-2">Key Findings & Contributions</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Demonstrated that statistical methods (e.g., ETS, ARIMA) still outperform current foundation models for low-frequency time series forecasting.</li>
-                    <li>• Conducted a rigorous multi-origin rolling forecast setup, enhancing the reliability of error estimates compared to single-origin designs.</li>
-                    <li>• Showed that the best statistical model achieved a 36% improvement in RMSsE over the best foundation model.</li>
-                    <li>• Contributed to the understanding of practical applicability and computational efficiency trade-offs of advanced forecasting models.</li>
+                    <li>Statistical methods (e.g., ETS, ARIMA) still outperform current foundation models for low-frequency time series forecasting.</li>
+                    <li>Multi-origin rolling forecasts improve reliability compared to single-origin designs.</li>
+                    <li>The best statistical model achieved a 36% improvement in RMSsE over the best foundation model.</li>
+                    <li>The study clarifies practical accuracy and computational efficiency trade-offs for advanced forecasting models.</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Research Impact & Context</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Submitted to the prestigious NeurIPS 2024 Workshop on Time Series in the Age of Large Models.</li>
-                    <li>• A collaboration with researchers from Iqast.</li>
-                    <li>• Addresses critical questions regarding the real-world efficacy of emerging AI models in time series forecasting.</li>
-                    <li>• Provides industry-relevant insights, particularly for supply chain and demand planning, where monthly data is prevalent.</li>
-                    <li>• Reinforces the need for critical assessment of advanced techniques against established methods using robust evaluation frameworks.</li>
+                    <li>Submitted to the NeurIPS 2024 Workshop on Time Series in the Age of Large Models.</li>
+                    <li>Collaboration with researchers from Lancaster University and Georgia Tech.</li>
+                    <li>Addresses critical questions about the real-world efficacy of emerging AI models in time series forecasting.</li>
+                    <li>Provides industry-relevant insights for supply chain and demand planning use cases where monthly data is common.</li>
+                    <li>Reinforces the need to compare new techniques against established methods using robust evaluation frameworks.</li>
                   </ul>
                 </div>
               </div>
@@ -529,7 +567,7 @@ function App() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Technical Expertise</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              A comprehensive overview of my technical skills and proficiencies across various domains.
+              Tools and methods I use across product, research, and operations work.
             </p>
           </div>
 
@@ -562,7 +600,7 @@ function App() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Major Projects</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Consolidated showcase of research, industry, and hackathon projects with clear goals, methods, and outcomes.
+              Research, industry, and course projects with measurable outcomes.
             </p>
           </div>
 
@@ -581,11 +619,22 @@ function App() {
                     {project.title}
                   </CardTitle>
                   <CardDescription>
-                    {project.organization} • {project.period}
+                    {project.organization} | {project.period}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className={`space-y-4 ${hasImages ? '' : 'min-h-48'}`}>
                   <p className="text-sm text-muted-foreground">{project.description}</p>
+                  {project.link && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="gap-2"
+                      onClick={() => window.open(project.link, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      Open Paper
+                    </Button>
+                  )}
                   {hasImages && (
                     <div className={project.images.length === 1 ? 'text-center' : 'grid grid-cols-2 gap-2'}>
                       {project.images.map((img, i) => (
@@ -640,7 +689,7 @@ function App() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Personal Interests</h2>
             <p className="text-lg text-muted-foreground">
-              Beyond data science, I'm passionate about diverse activities that fuel creativity and learning
+              A few interests outside data science.
             </p>
           </div>
 
@@ -658,56 +707,13 @@ function App() {
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section id="blog" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Latest Insights</h2>
-            <p className="text-lg text-muted-foreground">
-              Thoughts on data science, AI, and industry trends
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <Card key={index} className={`h-full hover:shadow-lg transition-shadow ${post.featured ? 'border-primary/50 bg-primary/5' : ''}`}>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <BookOpen className="h-5 w-5" />
-                    {post.title}
-                    {post.featured && <Badge variant="secondary">Featured</Badge>}
-                  </CardTitle>
-                  <CardDescription className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    {post.date}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-sm text-muted-foreground">{post.excerpt}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {post.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Button variant="ghost" size="sm" className="gap-2 p-0">
-                    Read More <ExternalLink className="h-3 w-3" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
             <p className="text-lg text-muted-foreground">
-              Open to discussing data science opportunities, research collaborations, or industry insights
+              Open to data science roles, applied ML work, and research collaborations.
             </p>
           </div>
 
@@ -775,7 +781,7 @@ function App() {
       <footer className="py-8 border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-sm text-muted-foreground">
-            <p>© 2025 Tejas Khandwekar. Built with React and Tailwind CSS.</p>
+            <p>© 2026 Tejas Khandwekar. Built with React and Tailwind CSS.</p>
           </div>
         </div>
       </footer>
@@ -784,5 +790,3 @@ function App() {
 }
 
 export default App
-
-
