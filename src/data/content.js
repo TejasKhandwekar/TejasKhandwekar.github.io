@@ -42,12 +42,51 @@ export const basics = {
 }
 
 export const impact = [
-  { value: '$50M', label: 'working-capital optimization' },
-  { value: '$2.9M', label: 'overbilling identified' },
-  { value: '$2M', label: 'annual savings' },
-  { value: '$1.3M', label: 'incremental annual revenue' },
-  { value: '4,580', label: 'negotiation turns evaluated (430 negotiations)' },
-  { value: '4.0', label: 'GPA at Georgia Tech' },
+  { value: '2', label: 'NeurIPS 2026 workshop papers accepted', area: 'AI Research' },
+  { value: '936', label: 'controlled fine-tuning branches in an attribution study', area: 'AI Research' },
+  { value: '−53.5%', label: 'stored parameters in a looped time-series foundation model', area: 'ML Engineering' },
+  { value: '$50M', label: 'working-capital optimization from demand forecasting', area: 'Data Science' },
+  { value: '$2.9M', label: 'overbilling identified by a GenAI RAG workflow', area: 'Data Science' },
+  { value: '$1.3M', label: 'incremental annual revenue from customer segmentation', area: 'Data Science' },
+]
+
+export const pillars = [
+  {
+    key: 'research',
+    title: 'AI Research',
+    summary: 'Understanding where language-model capabilities and behaviors come from, and how to measure and steer them.',
+    points: [
+      'Training data attribution and capability provenance (Pythia, OLMo 3)',
+      'Persona vectors and activation steering',
+      'Cross-lingual LLM behavior in multi-agent negotiation',
+    ],
+    href: '#research',
+    cta: 'Current research',
+  },
+  {
+    key: 'engineering',
+    title: 'ML Engineering',
+    summary: 'Building model-driven systems that run end to end, from LLM agents to compressed foundation models.',
+    points: [
+      'Long-horizon LLM agents with dynamic plan repair',
+      'Production RAG, multi-agent orchestration, and LLM evaluation pipelines',
+      'Deep RL (PPO self-play) and looped time-series foundation models',
+    ],
+    href: '#projects',
+    cta: 'Projects',
+  },
+  {
+    key: 'datascience',
+    title: 'Data Science',
+    summary: 'Three years of enterprise ML, plus internship and research work on large-scale behavioral and telemetry data.',
+    points: [
+      'Demand and price forecasting, customer segmentation, and A/B testing at ExxonMobil',
+      'Anomaly detection across millions of AppleCare customer cases',
+      'Unsupervised near-miss detection from Ford vehicle telemetry',
+    ],
+    href: '#experience',
+    cta: 'Experience',
+  },
 ]
 
 export const publications = [

@@ -20,6 +20,8 @@ import {
   ArrowUpRight,
   Sparkles,
   BookOpen,
+  Cpu,
+  TrendingUp,
 } from 'lucide-react'
 import tejasPhoto from './assets/tejas-photo.jpg'
 import {
@@ -32,8 +34,11 @@ import {
   education,
   skills,
   awards,
+  pillars,
 } from './data/content.js'
 import './App.css'
+
+const PILLAR_ICONS = { research: FlaskConical, engineering: Cpu, datascience: TrendingUp }
 
 const NAV = [
   { id: 'about', label: 'About' },
@@ -285,6 +290,7 @@ function App() {
                   <Sparkles className="h-3 w-3 mr-1" /> 2 papers accepted at NeurIPS 2026 workshops
                 </Chip>
                 <Chip>M.S. at Georgia Tech · 4.0 GPA</Chip>
+                <Chip>3 years of industry ML and data science</Chip>
               </div>
               <div>
                 <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">{basics.name}</h1>
@@ -335,6 +341,7 @@ function App() {
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 rounded-2xl border border-border bg-card overflow-hidden">
                 {impact.map((s, i) => (
                   <div key={i} className="p-5 border-border border-b border-r -mb-px -mr-px">
+                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-brand">{s.area}</p>
                     <p className="text-2xl sm:text-3xl font-bold tracking-tight tabular-nums">{s.value}</p>
                     <p className="mt-1 text-xs text-muted-foreground leading-snug">{s.label}</p>
                   </div>
@@ -345,7 +352,7 @@ function App() {
         </header>
 
         {/* About */}
-        <Section id="about" eyebrow="About" title="Building and evaluating language-model systems" muted>
+        <Section id="about" eyebrow="About" title="AI research, ML engineering, and data science" muted>
           <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10">
             <Reveal className="space-y-5 text-base sm:text-lg leading-relaxed text-muted-foreground">
               {basics.longBio.map((p, i) => (
@@ -364,6 +371,34 @@ function App() {
                 </div>
               </Card>
             </Reveal>
+          </div>
+
+          <div className="mt-14 grid md:grid-cols-3 gap-6">
+            {pillars.map((pl, i) => {
+              const Icon = PILLAR_ICONS[pl.key]
+              return (
+                <Reveal key={pl.key} delay={i * 0.06}>
+                  <Card className="p-6 h-full flex flex-col">
+                    <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-soft">
+                      <Icon className="h-5 w-5 text-brand" />
+                    </div>
+                    <h3 className="text-lg font-semibold">{pl.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{pl.summary}</p>
+                    <ul className="mt-4 space-y-2 flex-1">
+                      {pl.points.map((pt) => (
+                        <li key={pt} className="flex gap-2.5 text-sm">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+                          <span>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <a href={pl.href} className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand hover:underline">
+                      {pl.cta} <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  </Card>
+                </Reveal>
+              )
+            })}
           </div>
         </Section>
 
@@ -676,7 +711,7 @@ function App() {
                 <div className="relative max-w-2xl">
                   <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Let's talk</h2>
                   <p className="mt-4 text-lg opacity-80 leading-relaxed">
-                    Interested in research collaborations and roles in applied AI, LLM agents, and model evaluation.
+                    Interested in research collaborations and roles across applied AI, machine learning, and data science.
                   </p>
                   <a
                     href={`mailto:${basics.email}`}
